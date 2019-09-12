@@ -1,0 +1,39 @@
+<div class="mat-display-3 jumbotron text-center">Welcome</div>
+
+<div class="mat-display-1">
+
+    <h3>The max value is <b>10</b>!!!</h3>
+    <p>
+        You've clicked <button mat-raised-button (click)="countClick()">this</button> {{ clickCounter }} times.
+        <button mat-raised-button *ngIf="clickCounter == 10" (click)="resetCounter()">Reset Counter</button>
+    </p>
+
+
+
+</div>
+
+<ng-template [ngIf]=" 7 >= clickCounter ">
+    <div class="bg-success mat-display-1">
+        <div class="spinner-grow text-dark"></div> The click counter is <strong>FINE</strong>
+    </div>
+</ng-template>
+
+<ng-template [ngIf]="clickCounter > 7 && 10 > clickCounter ">
+    <div class="bg-warning mat-display-1">
+        <div class="spinner-grow text-dark"></div> The click counter is <strong>NEAR TO MAXIMUN VALUE</strong>
+    </div>
+
+</ng-template>
+
+<ng-template [ngIf]="clickCounter == 10 ">
+    <div class="bg-danger mat-display-1">
+        <div class="spinner-grow text-dark"></div>The click counter is <strong>IN MAXIMUN VALUE</strong>
+    </div>
+</ng-template>
+
+<div class="mat-display-1">
+    <p>
+        <input type="text" [(ngModel)]="name"><br>
+        <strong>You said: </strong> {{ name }}
+    </p>
+</div>
