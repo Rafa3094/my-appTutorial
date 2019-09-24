@@ -8,7 +8,9 @@ import { RequestTBComponent } from './request-tb/request-tb.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'list', component: ListComponent },
-  { path: 'request', component: RequestTBComponent }
+  { path: 'request', component: RequestTBComponent },
+  { path: 'lazy', loadChildren: () => import('./lazy/lazy.module').then(m => m.LazyModule) },
+  { path: 'lazy2', loadChildren: './lazy2/lazy2.module'},
 ];
 
 @NgModule({
